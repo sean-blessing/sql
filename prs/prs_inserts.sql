@@ -1,14 +1,14 @@
 -- insert users
-INSERT INTO `user` VALUES 
-(1,'SYSTEM','xxxxx','System','System','XXX-XXX-XXXX','system@test.com','\0','\0','','2017-09-26 11:13:47','2017-09-26 11:13:47',1),
-(2,'sblessing','login','Sean','Blessing','513-600-7096','sean@blessingtechnology.com','','','','2017-09-28 16:35:33','2017-09-28 16:35:33',1);
+INSERT INTO user (ID, UserName, Password, FirstName, LastName, Phone, Email, IsReviewer, IsAdmin) VALUES 
+(1,'SYSTEM','xxxxx','System','System','XXX-XXX-XXXX','system@test.com','\0','\0'),
+(2,'sblessing','login','Sean','Blessing','513-600-7096','sean@blessingtechnology.com','','');
 
 -- insert core status values
 INSERT INTO `status` VALUES 
-(1,'New','','2017-09-29 12:33:39','2017-09-29 12:33:39',1),
-(2,'Approved','','2017-09-29 12:33:39','2017-09-29 12:33:39',1),
-(3,'Rejected','','2017-09-29 12:33:39','2017-09-29 12:33:39',1),
-(4,'Review','','2017-12-16 11:39:08','2017-12-16 11:44:06',1);
+(1,'New','1','2017-09-29 12:33:39','2017-09-29 12:33:39',1),
+(2,'Approved','1','2017-09-29 12:33:39','2017-09-29 12:33:39',1),
+(3,'Rejected','1','2017-09-29 12:33:39','2017-09-29 12:33:39',1),
+(4,'Review','1','2017-12-16 11:39:08','2017-12-16 11:44:06',1);
 
 -- insert vendors
 INSERT INTO `vendor` VALUES 
