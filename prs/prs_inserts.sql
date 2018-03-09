@@ -4,19 +4,20 @@ INSERT INTO user (ID, UserName, Password, FirstName, LastName, Phone, Email, IsR
 (2,'sblessing','login','Sean','Blessing','513-600-7096','sean@blessingtechnology.com','','');
 
 -- insert core status values
-INSERT INTO `status` VALUES 
-(1,'New','1','2017-09-29 12:33:39','2017-09-29 12:33:39',1),
-(2,'Approved','1','2017-09-29 12:33:39','2017-09-29 12:33:39',1),
-(3,'Rejected','1','2017-09-29 12:33:39','2017-09-29 12:33:39',1),
-(4,'Review','1','2017-12-16 11:39:08','2017-12-16 11:44:06',1);
+INSERT INTO status (ID, Description) VALUES 
+(1,'New'),
+(2,'Approved'),
+(3,'Rejected'),
+(4,'Review');
 
 -- insert vendors
-INSERT INTO `vendor` VALUES 
-(1,'BB-1001','Best Buy','100 Best Buy Street','Louisville','KY','40207','502-111-9099','geeksquad@bestbuy.com','\0','','2017-09-26 11:13:47','2017-09-26 11:13:47',1),
-(2,'AP-1001','Apple Inc','1 Infinite Loop','Cupertino','CA','95014','800-123-4567','genius@apple.com','\0','','2017-09-26 11:13:47','2017-09-26 11:13:47',1),
-(3,'AM-1001','Amazon','410 Terry Ave. North','Seattle','WA','98109','206-266-1000','amazon@amazon.com','','','2017-09-26 11:13:47','2017-09-26 11:13:47',1),
-(4,'ST-1001','Staples','9550 Mason Montgomery Rd','Mason','OH','45040','513-754-0235','support@orders.staples.com','','','2017-09-26 11:13:47','2017-09-26 11:13:47',1),
-(5,'MC-1001','Micro Center','11755 Mosteller Rd','Sharonville','OH','45241','513-782-8500','support@microcenter.com','','','2017-09-26 11:13:47','2017-09-26 11:13:47',1);
+INSERT INTO `vendor` (ID, Code, Name, Address, City, State, Zip, Phone, Email, isPreApproved) 
+VALUES 
+(1,'BB-1001','Best Buy','100 Best Buy Street','Louisville','KY','40207','502-111-9099','geeksquad@bestbuy.com','\0'),
+(2,'AP-1001','Apple Inc','1 Infinite Loop','Cupertino','CA','95014','800-123-4567','genius@apple.com','\0'),
+(3,'AM-1001','Amazon','410 Terry Ave. North','Seattle','WA','98109','206-266-1000','amazon@amazon.com',''),
+(4,'ST-1001','Staples','9550 Mason Montgomery Rd','Mason','OH','45040','513-754-0235','support@orders.staples.com',''),
+(5,'MC-1001','Micro Center','11755 Mosteller Rd','Sharonville','OH','45241','513-782-8500','support@microcenter.com','');
 
 -- insert base products
 INSERT INTO `product` (`ID`,`VendorID`,`PartNumber`,`Name`,`Price`,`Unit`,`PhotoPath`) VALUES (1,1,'ME280LL','iPad Mini 2',296.99,NULL,NULL);
