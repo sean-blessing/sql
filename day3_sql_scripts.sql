@@ -15,3 +15,17 @@ select * from product
  select count(*) from product
   where listprice = 57.50;
   
+select pdt.ProductID, Code, -- test comment
+	   pdt.Description, pdt.ListPrice 
+  from product pdt;
+  
+  delete from product
+  -- where id = 7
+  
+  
+  
+  
+  
+  
+  
+  
