@@ -48,7 +48,8 @@ select * from accounts
 -- looking for names that start with a vowel    
 select * from accounts
 WHERE accountholder REGEXP "^[aeiou].*";
- 
+
+-- basic select, use prior to next statement
 select balance 
   from accounts;
 
