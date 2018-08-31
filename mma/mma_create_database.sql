@@ -43,7 +43,7 @@ INSERT INTO Product VALUES
 
 -- insert some test data for invoice and line item, based on products above
 INSERT INTO Invoice VALUES
-(1, 'SB0001', 'Sean Blessing', '2018-03-08', 0);
+(1, 'SB0001', 'Sean Blessing', '2018-03-08', 832.50);
 
 INSERT INTO LineItem VALUES
 (1, 1, 7, 5),
