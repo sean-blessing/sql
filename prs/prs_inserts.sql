@@ -1,14 +1,7 @@
 -- insert users
 INSERT INTO user (ID, UserName, Password, FirstName, LastName, Phone, Email, IsReviewer, IsAdmin) VALUES 
-(1,'SYSTEM','xxxxx','System','System','XXX-XXX-XXXX','system@test.com','\0','\0'),
-(2,'sblessing','login','Sean','Blessing','513-600-7096','sean@blessingtechnology.com','','');
-
--- insert core status values
-INSERT INTO status (ID, Description) VALUES 
-(1,'New'),
-(2,'Approved'),
-(3,'Rejected'),
-(4,'Review');
+(1,'SYSTEM','xxxxx','System','System','XXX-XXX-XXXX','system@test.com',1,1),
+(2,'sblessing','login','Sean','Blessing','513-600-7096','sean@blessingtechnology.com',1,1);
 
 -- insert vendors
 INSERT INTO `vendor` (ID, Code, Name, Address, City, State, Zip, Phone, Email, isPreApproved) 
