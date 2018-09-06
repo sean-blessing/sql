@@ -6,19 +6,19 @@ USE prs;
 -- create User table
 -- DROP TABLE IF EXISTS User;
 Create table User (
-ID integer primary key auto_increment,
-UserName varchar(20) not null,
-Password varchar(10) not null,
-FirstName varchar(20) not null,
-LastName varchar(20) not null,
-PhoneNumber varchar(12) not null,
-Email varchar(75) not null,
-IsReviewer tinyint(1) not null,
-IsAdmin tinyint(1) not null,
-IsActive tinyint(1) default 1 not null,
-DateCreated datetime default current_timestamp not null,
-DateUpdated datetime default current_timestamp on update current_timestamp not null,
-UpdatedByUser integer default 1 not null,
+ID 				integer 		primary key auto_increment,
+UserName 		varchar(20) 	not null,
+Password 		varchar(10) 	not null,
+FirstName 		varchar(20) 	not null,
+LastName 		varchar(20) 	not null,
+PhoneNumber 	varchar(12) 	not null,
+Email 			varchar(75) 	not null,
+IsReviewer 		tinyint(1) 		not null,
+IsAdmin 		tinyint(1) 		not null,
+IsActive 		tinyint(1) 		default 1 not null,
+DateCreated 	datetime 		default current_timestamp not null,
+DateUpdated 	datetime 		default current_timestamp on update current_timestamp not null,
+UpdatedByUser 	integer 		default 1 not null,
 CONSTRAINT uname unique (UserName)
 );
 
@@ -28,20 +28,20 @@ CONSTRAINT uname unique (UserName)
 
 -- create Vendor table
 Create table Vendor (
-ID integer primary key auto_increment,
-Code varchar(10) not null,
-Name varchar(255) not null,
-Address varchar(255) not null,
-City varchar(255) not null,
-State varchar(2) not null,
-Zip varchar(5) not null,
-PhoneNumber varchar(12) not null,
-Email varchar(100) not null,
-IsPreapproved tinyint(1) not null,
-IsActive tinyint(1) default 1 not null,
-DateCreated datetime default current_timestamp not null,
-DateUpdated datetime default current_timestamp on update current_timestamp not null,
-UpdatedByUser integer default 1 not null,
+ID 				integer 		primary key auto_increment,
+Code 			varchar(10) 	not null,
+Name 			varchar(255) 	not null,
+Address 		varchar(255) 	not null,
+City 			varchar(255) 	not null,
+State 			varchar(2) 		not null,
+Zip 			varchar(5) 		not null,
+PhoneNumber 	varchar(12) 	not null,
+Email 			varchar(100) 	not null,
+IsPreapproved 	tinyint(1) 		not null,
+IsActive 		tinyint(1) 		default 1 not null,
+DateCreated 	datetime 		default current_timestamp not null,
+DateUpdated 	datetime 		default current_timestamp on update current_timestamp not null,
+UpdatedByUser 	integer 		default 1 not null,
 
 CONSTRAINT vcode unique (Code)
 );
@@ -49,36 +49,36 @@ CONSTRAINT vcode unique (Code)
 
 -- create PurchaseRequest table
 Create table PurchaseRequest (
-ID integer primary key auto_increment,
-UserID integer not null,
-Description varchar(100) not null,
-Justification varchar(255) not null,
-DateNeeded date not null,
-DeliveryMode varchar(25) not null,
-Status varchar(20) not null default 'New',
-Total decimal(10,2) not null,
-SubmittedDate datetime not null,
-ReasonForRejection varchar(100) null,
-IsActive tinyint(1) default 1 not null,
-DateCreated datetime default current_timestamp not null,
-DateUpdated datetime default current_timestamp on update current_timestamp not null,
-UpdatedByUser integer default 1 not null,
+ID 					integer 		primary key auto_increment,
+UserID 				integer 		not null,
+Description 		varchar(100) 	not null,
+Justification 		varchar(255) 	not null,
+DateNeeded 			date 			not null,
+DeliveryMode 		varchar(25) 	not null,
+Status 				varchar(20) 	not null default 'New',
+Total 				decimal(10,2) 	not null,
+SubmittedDate 		datetime 		not null,
+ReasonForRejection 	varchar(100) 	null,
+IsActive 			tinyint(1) 		default 1 not null,
+DateCreated 		datetime 		default current_timestamp not null,
+DateUpdated 		datetime 		default current_timestamp on update current_timestamp not null,
+UpdatedByUser 		integer 		default 1 not null,
 Foreign Key (UserID) references user(ID)
 );
 
 -- create Product table
 Create table Product (
-ID integer primary key auto_increment,
-VendorID integer not null,
-PartNumber varchar(50) not null,
-Name varchar(150) not null,
-Price decimal(10,2) not null,
-Unit varchar(255) null,
-PhotoPath varchar(255) null,
-IsActive tinyint(1) default 1 not null,
-DateCreated datetime default current_timestamp not null,
-DateUpdated datetime default current_timestamp on update current_timestamp not null,
-UpdatedByUser integer default 1 not null,
+ID 				integer 		primary key auto_increment,
+VendorID 		integer 		not null,
+PartNumber 		varchar(50) 	not null,
+Name 			varchar(150) 	not null,
+Price 			decimal(10,2)	 not null,
+Unit 			varchar(255) 	null,
+PhotoPath 		varchar(255) 	null,
+IsActive 		tinyint(1) 		default 1 not null,
+DateCreated 	datetime 		default current_timestamp not null,
+DateUpdated 	datetime 		default current_timestamp on update current_timestamp not null,
+UpdatedByUser 	integer 		default 1 not null,
 
 Foreign Key (VendorID) references vendor(ID),
 CONSTRAINT vendor_part unique (VendorID, PartNumber)
@@ -87,14 +87,14 @@ CONSTRAINT vendor_part unique (VendorID, PartNumber)
 
 -- create PurchaseRequestLineItem table
 Create table PurchaseRequestLineItem (
-ID integer primary key auto_increment,
-purchaserequestid integer not null,
-productid integer not null,
-quantity integer not null,
-IsActive tinyint(1) default 1 not null,
-DateCreated datetime default current_timestamp not null,
-DateUpdated datetime default current_timestamp on update current_timestamp not null,
-UpdatedByUser integer default 1 not null,
+ID 						integer 		primary key auto_increment,
+purchaserequestid 		integer 		not null,
+productid 				integer 		not null,
+quantity 				integer 		not null,
+IsActive 				tinyint(1) 		default 1 not null,
+DateCreated 			datetime 		default current_timestamp not null,
+DateUpdated 			datetime 		default current_timestamp on update current_timestamp not null,
+UpdatedByUser 			integer 		default 1 not null,
 
 Foreign Key (ProductID) references product(ID),
 Foreign Key (PurchaseRequestID) references purchaserequest(ID),
