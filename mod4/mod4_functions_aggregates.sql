@@ -1,3 +1,5 @@
+-- execute these off sqlbootcampexample schema
+
 select * from customer
  order by state;
 
