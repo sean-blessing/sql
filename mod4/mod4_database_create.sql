@@ -32,31 +32,31 @@ create table orders (
 	id 				int 			not null primary key auto_increment,
 	customerID 		int 			not null,
 	date			datetime 		not null,
-	amount 			decimal(14,0) 	not null default 0
+	total 			decimal(14,0) 	not null default 0
 );
 
 ALTER TABLE orders
 ADD FOREIGN KEY (customerID) REFERENCES customer(id);
 
-Insert into orders (date, amount, customerID)
+Insert into orders (date, total, customerID)
 values ('2017-12-31', 778, 6);
-Insert into orders (date, amount, customerID)
+Insert into orders (date, total, customerID)
 values ('2017-7-3', 156, 5);
-Insert into orders (date, amount, customerID)
+Insert into orders (date, total, customerID)
 values ('2017-6-23', 491, 7);
-Insert into orders (date, amount, customerID)
+Insert into orders (date, total, customerID)
 values ('2017-3-6', 230, 6);
-Insert into orders (date, amount, customerID)
+Insert into orders (date, total, customerID)
 values ('2017-11-21', 844, 5);
-Insert into orders (date, amount, customerID)
+Insert into orders (date, total, customerID)
 values ('2017-9-18', 849, 2);
-Insert into orders (date, amount, customerID)
+Insert into orders (date, total, customerID)
 values ('2017-4-15', 371, 2);
-Insert into orders (date, amount, customerID)
+Insert into orders (date, total, customerID)
 values ('2017-7-13', 451, 2);
-Insert into orders (date, amount, customerID)
+Insert into orders (date, total, customerID)
 values ('2017-1-7', 510, 4);
-Insert into orders (date, amount, customerID)
+Insert into orders (date, total, customerID)
 values ('2017-9-23', 612, 6);
-Insert into orders (date, amount, customerID)
+Insert into orders (date, total, customerID)
 values ('2017-10-11', 736, 5);
