@@ -2,16 +2,7 @@ DROP DATABASE IF EXISTS students;
 CREATE DATABASE students;
 
 USE students;
-/*
-CREATE TABLE User (
-  UserID INT NOT NULL AUTO_INCREMENT,
-  Email VARCHAR(50),
-  FirstName VARCHAR(50),
-  LastName VARCHAR(50),
-  
-  PRIMARY KEY(UserID) 
-);
-*/
+
 CREATE TABLE `user` (
 	`ID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
 	`Name` varchar(30) NOT NULL,
