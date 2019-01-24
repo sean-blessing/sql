@@ -1,7 +1,19 @@
+select * from user;
+select * from course;
+
 -- Inner Join
-SELECT user.name, course.name
-FROM user
-JOIN course on user.courseid = course.id;
+SELECT u.name as userName, c.name as courseName
+  FROM user u
+  JOIN course c 
+    on u.courseid = c.id;
+    
+-- another way to join data, but don't do it!!!    
+SELECT u.name as userName, c.name as courseName
+  FROM user u, course c
+ WHERE u.courseid = c.ID;
+    
+    
+    
 
 select user.name as UserName, course.name as CourseName
 from user, course
@@ -17,7 +29,7 @@ SELECT user.name, course.name
 FROM `user`
 RIGHT JOIN `course` on user.courseid = course.id;
 
--- Outter Join
+-- Union (because MySQL doesn't implement OUTER JOIN)
 SELECT user.name, course.name
 FROM `user`
 LEFT JOIN `course` on user.courseid = course.id
