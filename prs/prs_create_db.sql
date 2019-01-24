@@ -13,8 +13,8 @@ FirstName 		varchar(20) 	not null,
 LastName 		varchar(20) 	not null,
 PhoneNumber 	varchar(12) 	not null,
 Email 			varchar(75) 	not null,
-IsReviewer 		tinyint(1) 		not null,
-IsAdmin 		tinyint(1) 		not null,
+IsReviewer 		tinyint(1) 		default 1 not null,
+IsAdmin 		tinyint(1) 		default 1 not null,
 IsActive 		tinyint(1) 		default 1 not null,
 DateCreated 	datetime 		default current_timestamp not null,
 DateUpdated 	datetime 		default current_timestamp on update current_timestamp not null,
@@ -134,7 +134,5 @@ ALTER TABLE user
 ADD UNIQUE (Email);
 
 -- create a user and grant privileges to that user
-GRANT SELECT, INSERT, DELETE, UPDATE
-ON prs.*
-TO prs_user@localhost
-IDENTIFIED BY 'sesame';
+CREATE USER prs_user@localhost IDENTIFIED BY 'sesame';
+GRANT SELECT, INSERT, DELETE, UPDATE ON prs.* TO prs_user@localhost;
