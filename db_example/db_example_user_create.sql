@@ -1,0 +1,2 @@
+-- create user 'springuser'@'%' identified by 'ThePassword'; -- Creates the user
+grant all on db_example3.* to 'springuser'@'%'; -- Gives all the privileges to the new user on the newly created database
