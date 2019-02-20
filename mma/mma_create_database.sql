@@ -8,7 +8,7 @@ CREATE TABLE Product (
   ID			INT            PRIMARY KEY  AUTO_INCREMENT,
   Code          VARCHAR(10)    NOT NULL     UNIQUE,
   Description	VARCHAR(255)   NOT NULL,
-  ListPrice		DECIMAL(10,2)  NOT NULL
+  Price			DECIMAL(10,2)  NOT NULL
 );
 
 -- create Invoice table
@@ -50,7 +50,5 @@ INSERT INTO LineItem VALUES
 (2, 1, 5, 10);
 
 -- create a user and grant privileges to that user
-GRANT SELECT, INSERT, DELETE, UPDATE
-ON mma.*
-TO mma_user@localhost
-IDENTIFIED BY 'sesame';
+CREATE USER mma_user@localhost IDENTIFIED BY 'sesame';
+GRANT SELECT, INSERT, DELETE, UPDATE ON mma.* TO mma_user@localhost;
