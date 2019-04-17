@@ -38,5 +38,5 @@ insert into request (UserID,Name) VALUES
 	(6,'doobies');
 
 -- create a user and grant privileges to that user
-CREATE USER recur@localhost IDENTIFIED BY 'sesame';
+CREATE USER recurvendor@localhost IDENTIFIED BY 'sesame';
 GRANT SELECT, INSERT, DELETE, UPDATE ON recursion.* TO recur@localhost;
