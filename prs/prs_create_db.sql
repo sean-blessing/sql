@@ -129,10 +129,11 @@ INSERT INTO `product` (`ID`,`VendorID`,`PartNumber`,`Name`,`Price`,`Unit`,`Photo
 INSERT INTO `product` (`ID`,`VendorID`,`PartNumber`,`Name`,`Price`,`Unit`,`PhotoPath`) VALUES (12,5,'228148','Acer Aspire ATC-780A-UR12 Desktop Computer',399.99,'','/images/AcerAspireDesktop.jpg');
 INSERT INTO `product` (`ID`,`VendorID`,`PartNumber`,`Name`,`Price`,`Unit`,`PhotoPath`) VALUES (13,5,'279364','Lenovo IdeaCentre All-In-One Desktop',349.99,'','/images/LenovoIdeaCenter.jpg');
 
--- make user.Email unique
-ALTER TABLE user
-ADD UNIQUE (Email);
+-- make user.Email unique:  not necessary as this is already in table create
+-- ALTER TABLE user
+-- ADD UNIQUE (Email);
 
 -- create a user and grant privileges to that user
+DROP USER IF EXISTS prs_user@localhost;
 CREATE USER prs_user@localhost IDENTIFIED BY 'sesame';
 GRANT SELECT, INSERT, DELETE, UPDATE ON prs.* TO prs_user@localhost;
